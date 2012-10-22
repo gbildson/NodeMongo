@@ -1,0 +1,22 @@
+extends layout
+block body
+  form(action="/login", method="POST")
+    fieldset
+      legend Log in
+      if ( !(typeof signupEmail === 'undefined') && signupEmail)
+        p
+          Congratulations on signing up! Please login below.
+        p
+          label Email
+          input(name="user[email]", type="text", value=signupEmail)
+      else
+        p
+          label Email
+          input(name="user[email]", type="text")
+      p
+        label Password
+        input(name="user[password]", type="password")
+      p
+        button Submit
+      p
+        a(href="/") Go back
